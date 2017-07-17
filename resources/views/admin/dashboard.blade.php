@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
+                <div class="panel-heading">Dashboard 
 
                     <h2>Ahoj, 
 
@@ -19,18 +19,13 @@
 
                 <div class="panel-body">
                     Hi you are in Admin dashboard! Huray!
-                  
+                    
                     Vitaj 
-                    @if (Auth::guard('web_admin')->user()->name)
+                   @if (Auth::guard('web_admin')->user()->name)
                             {{Auth::guard('web_admin')->user()->name}}
                     @else
                             <li>Nie si prihlásený</li>
                     @endif
-                    <br>
-                    <a href="AddRealty">Pre pridanie novej nehnuteľnosti klikni tu</a>
-                    <br>
-                    <a href="administrators/create">Pre pridanie nového admina klikni tu</a>
-
                 </div>
             </div>
         </div>
