@@ -235,5 +235,6 @@ return [
 
     'plugins' => [
         'datatables' => true,
+        'datepicker' => true,
     ],
 ];

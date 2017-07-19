@@ -18,12 +18,13 @@ class AdminPropertiesController extends Controller
     {
     	return view('admin.properties.AddPropertyForm');
     }
+    
     public function addNewProperty(Request $request)
     {
-    	//$property = new RealEstate;
-		//$property->Ulica = $request->ulica;
-        //$property->Cena = $request->cena;
-		//$property->save();
+    	$property = new RealProperty;
+		$property->address_street = $request->address_street;
+		$property->price = $request->price;
+		$property->save();
 		return redirect('admin/properties/add-property');
     }
 }
