@@ -28,9 +28,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Admin routes
 // /*******/
 
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
 	
 // Admin login
 
@@ -44,8 +41,8 @@ Route::get('admin/administrators/create', 'AdminAuth\RegisterController@showRegi
 Route::post('admin/administrators/create', 'AdminAuth\RegisterController@register');
 
 //Admin RealtyRegistration - new Realty
-Route::get('admin/AddRealty','RealtiesController\AdminRealtiesController@showAddForm');
-Route::post('admin/AddRealty','RealtiesController\AdminRealtiesController@addNewRealty');
+Route::get('admin/properties/add-property','PropertiesController\AdminPropertiesController@showAddForm');
+Route::post('admin/properties/add-property','PropertiesController\AdminPropertiesController@addNewProperty');
 
 // Admin & users Middlewares
 // /*******/

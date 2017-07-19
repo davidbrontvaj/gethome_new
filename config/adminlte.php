@@ -111,7 +111,7 @@ return [
         'SPRÁVA REALÍT',
         [
             'text'        => 'Pridať realitu',
-            'url'         => 'admin/AddRealty',
+            'url'         => 'admin/properties/add-property',
             'icon'        => 'plus-square',
         ],
 
