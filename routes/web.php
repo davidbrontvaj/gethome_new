@@ -24,13 +24,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
-// Admin routes
-// /*******/
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dashboard');
-});
 	
 // Admin login
 
@@ -65,8 +58,6 @@ Route::group(['middleware' => 'admin_guest'], function() {
 Route::group(['middleware' => 'admin_auth'], function(){
 
 	Route::post('admin_logout', 'AdminAuth\LoginController@logout');
-	Route::get('/admin/dashboard', function(){
-	  return view('admin.dashboard');
-	});
+	Route::get('/admin/dashboard', 'AdminController@showDashboard');
 
 });
