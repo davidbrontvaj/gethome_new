@@ -108,28 +108,36 @@ return [
     */
 
     'menu' => [
-        'MAIN NAVIGATION',
+        'SPRÁVA REALÍT',
+        [
+            'text'        => 'Pridať realitu',
+            'url'         => 'admin/AddRealty',
+            'icon'        => 'plus-square',
+        ],
+
+
+        'SPRÁVA WEBU',
         [
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Stránky',
+            'url'         => '#',
             'icon'        => 'file',
             'label'       => 4,
             'label_color' => 'success',
         ],
-        'ACCOUNT SETTINGS',
+        'NASTAVENIA ÚČTU',
         [
-            'text' => 'Profile',
-            'url'  => 'admin/settings',
+            'text' => 'Profil',
+            'url'  => '#',
             'icon' => 'user',
         ],
         [
-            'text' => 'Change Password',
-            'url'  => 'admin/settings',
+            'text' => 'Zmeniť heslo',
+            'url'  => '#',
             'icon' => 'lock',
         ],
         [
