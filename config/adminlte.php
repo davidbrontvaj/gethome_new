@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Admin @ Gethome',
 
     'title_prefix' => '',
 
-    'title_postfix' => '',
+    'title_postfix' => ' / Admin @ Gethome',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Gethome</b>admin',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>GH</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'black-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -85,15 +85,15 @@ return [
     |
     */
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'dashboard',
 
-    'logout_url' => 'logout',
+    'logout_url' => 'admin_logout',
 
     'logout_method' => null,
 
-    'login_url' => 'login',
+    'login_url' => 'admin',
 
-    'register_url' => 'register',
+    'register_url' => null,
 
     /*
     |--------------------------------------------------------------------------
