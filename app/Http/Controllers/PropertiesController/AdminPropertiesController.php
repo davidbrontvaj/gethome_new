@@ -4,7 +4,7 @@ namespace App\Http\Controllers\PropertiesController;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\RealEstate;
+use App\RealProperty;
 
 class AdminPropertiesController extends Controller
 {
@@ -20,10 +20,10 @@ class AdminPropertiesController extends Controller
     }
     public function addNewProperty(Request $request)
     {
-    	$property = new RealEstate;
-		$property->Ulica = $request->ulica;
-		$property->Cena = $request->cena;
-		$property->save();
+    	//$property = new RealEstate;
+		//$property->Ulica = $request->ulica;
+        //$property->Cena = $request->cena;
+		//$property->save();
 		return redirect('admin/properties/add-property');
     }
 }
