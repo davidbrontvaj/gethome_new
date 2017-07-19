@@ -1,25 +1,21 @@
-@extends('adminlte::page')
-
-
-@section('title', 'Pridať realitu')
-
-
-@section('content_header')
-    <h1>Pridať administrátora</h1>
-
-@stop
-
+@extends('layouts.admin')
 
 @section('content')
-    <p>Na tomto mieste môžeš pridať nového admina.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Create new admin</div>
+
+                <div class="panel-body">
+                    You can create new administrator here.
 
 
-    <div class="box box-primary">
 
-        <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/administrators/create') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/administrators/create') }}">
+                        {{ csrf_field() }}
 
-            {{ csrf_field() }}
-<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
@@ -72,12 +68,16 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-success">
-                                   Pridať admina
+                                    Register Seller
                                 </button>
                             </div>
                         </div>
+                    </form>
 
-        </form>
+
+                </div>
+            </div>
+        </div>
     </div>
-
-@stop
+</div>
+@endsection

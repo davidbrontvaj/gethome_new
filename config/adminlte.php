@@ -117,7 +117,16 @@ return [
 
 
         'SPRÁVA WEBU',
+
         [
+            'text'        => 'Pridať administrátora',
+            'url'         => 'admin/administrators/create',
+            'icon'        => 'plus-square',
+        ],
+
+
+        [
+
             'text' => 'Blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
