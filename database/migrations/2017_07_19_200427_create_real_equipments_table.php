@@ -16,6 +16,7 @@ class CreateRealEquipmentsTable extends Migration
         Schema::create('real_equipments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('order');
             $table->timestamps();
         });
     }
