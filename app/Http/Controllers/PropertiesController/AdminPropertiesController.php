@@ -40,6 +40,7 @@ class AdminPropertiesController extends Controller
     	$property = new RealProperty;
         $property->title = $request->title;
         $property->description = $request->description;
+        $property->disposition=$request->disposition;
         $property->price = $request->price;
         $property->deposit = $request->deposit;
         $property->area = $request->area;
@@ -48,6 +49,9 @@ class AdminPropertiesController extends Controller
         $property->available_from = $request->available_from;
         $property->published=1;
         $property->active=1;
+        $property->condition=$request->condition;
+        $property->type=$request->type;
+        $property->equiped=$request->equiped;
         $property->save();
 		return redirect('admin/properties/add-property');
     }
