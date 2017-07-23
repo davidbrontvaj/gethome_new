@@ -41,7 +41,7 @@
                 <div class="form-group">    
                                              
                     <label for="description" class="control-label">Popis</label>
-                    <textarea class="form-control" rows="4"></textarea>
+                    <textarea name="description" class="form-control" rows="4"></textarea>
 
                 </div>
 
@@ -50,11 +50,17 @@
 
                     <label for="disposition" class="control-label">Dispozícia bytu</label>
                         <select name="disposition" class="form-control select2">
-                              <option selected="selected">Nie je uvedené</option>
-                              <option>1-izbový byt</option>
-                              <option>2-izbový byt</option>
-                              <option>3-izbový byt</option>
-                              <option>4-izbový byt</option>
+                          @foreach ($dispositions as $disposition)
+                            @if($disposition->order==1)
+                              {
+                                <option selected="selected" value={{$disposition->id}}>{{$disposition->name}}</option>
+                              }
+                            @else
+                              {
+                                <option value={{$disposition->id}}>{{$disposition->name}}</option> 
+                              }
+                            @endif
+                          @endforeach
                         </select>
 
                   </div>
@@ -62,10 +68,17 @@
                 <div class="form-group">
                         <label for="type" class="control-label">Typ inzerátu</label>
                             <select name="type" class="form-control select2">
-                                  <option selected="selected">Nie je uvedené</option>
-                                   <option>Samostatná izba</option>
-                                  <option>Spolubývanie</option>
-                                  <option>Celý byt</option>                               
+                            @foreach ($types as $type)
+                              @if($type->order==1)
+                                {
+                              <option selected="selected" value={{$type->id}} >{{$type->name}}</option>
+                                }
+                              @else
+                              {
+                                <option value={{$type->id}}>{{$type->name}}</option> 
+                              }
+                              @endif
+                            @endforeach                               
                             </select>
                 </div>
  
@@ -160,11 +173,17 @@
                 <div class="form-group">
                         <label for="condition" class="control-label">Stav bytu</label>
                             <select name="condition" class="form-control select2">
-                                  <option selected="selected">Nie je uvedené</option>
-                                   <option>Čiastočná rekonštrukcia</option>
-                                  <option>Úplná rekonštrukcia</option>
-                                  <option>Nový</option>  
-                                  <option>Pôvodný stav</option>                             
+                              @foreach ($conditions as $condition)
+                                @if($condition->order==1)
+                                  {
+                                    <option selected="selected" value={{$condition->id}}>{{$condition->name}}</option>
+                                  }
+                                @else
+                                {
+                                  <option value={{$condition->id}}>{{$condition->name}}</option> 
+                                }
+                                @endif
+                              @endforeach                                 
                             </select>
                 </div>
 
@@ -180,10 +199,17 @@
             <div class="form-group">
                         <label for="equiped" class="control-label">Zariadenie bytu</label>
                             <select name="equiped" class="form-control select2">
-                                  <option selected="selected">Nie je uvedené</option>
-                                   <option>Plne zariadený</option>
-                                  <option>Čiastočne zariadený</option>
-                                  <option>Nezariadený</option>                             
+                              @foreach ($equipments as $equipment)
+                                @if($equipment->order==1)
+                                  {
+                                    <option selected="selected" value={{$equipment->id}}>{{$equipment->name}}</option>
+                                  }
+                                @else
+                                {
+                                  <option value={{$equipment->id}}>{{$equipment->name}}</option> 
+                                }
+                                @endif
+                              @endforeach                             
                             </select>
             </div>
 

@@ -16,6 +16,7 @@ class CreateRealDispositionsTable extends Migration
         Schema::create('real_dispositions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->integer('order');
             $table->timestamps();
         });
     }
