@@ -33,6 +33,8 @@ class CreateRealPropertiesTable extends Migration
             $table->bigInteger('user_id');
             $table->boolean('published');
             $table->boolean('active');
+            $table->string('url');
+            $table->bigInteger('no_user_id');
         });
     }
 

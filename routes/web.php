@@ -22,9 +22,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-	
+//Property detail
+Route::get('properties','PropertyOffer@showOffer');
+Route::get('properties/{id_property}/{url_property}','PropertyOffer@showDetails');
+Route::get('properties/{id_property}','PropertyOffer@showDetails');	
 // Admin login
 
 Route::post('admin_logout', 'AdminAuth\LoginController@logout');
@@ -39,7 +40,6 @@ Route::post('admin/administrators/create', 'AdminAuth\RegisterController@registe
 //Admin RealtyRegistration - new Realty
 Route::get('admin/properties/add-property','PropertiesController\AdminPropertiesController@showAddForm');
 Route::post('admin/properties/add-property','PropertiesController\AdminPropertiesController@addNewProperty');
-
 // Admin & users Middlewares
 // /*******/
 

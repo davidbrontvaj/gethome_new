@@ -52,6 +52,7 @@ class AdminPropertiesController extends Controller
         $property->condition=$request->condition;
         $property->type=$request->type;
         $property->equiped=$request->equiped;
+        $property->url=str_replace(' ', '_',strtolower($request->title));
         $property->save();
 		return redirect('admin/properties/add-property');
     }
