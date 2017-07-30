@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //load Models (classes)
 use App\RealProperty;
+use App\RealNoUserContact;
 use App\RealDisposition;
 use App\RealEquipment;
 use App\RealType;
@@ -37,6 +38,12 @@ class AdminPropertiesController extends Controller
     
     public function addNewProperty(Request $request)
     {
+        $nouser=new RealNoUserContact;
+        $nouser->name=$request->nousername;
+        $nouser->surname=$request->nousersurname;
+        $nouser->email=$request->nouseremail;
+        $nouser->phone=$request->nouserphone;
+        $nouser->save();
     	$property = new RealProperty;
         $property->title = $request->title;
         $property->description = $request->description;
@@ -46,13 +53,17 @@ class AdminPropertiesController extends Controller
         $property->area = $request->area;
         $property->address_street = $request->address_street;
         $property->address_city = $request->address_city;
-        $property->available_from = $request->available_from;
+        $date = str_replace('.', '-', $request->available_from);
+        $property->available_from = date('Y-m-d', strtotime($date));
         $property->published=1;
         $property->active=1;
         $property->condition=$request->condition;
         $property->type=$request->type;
         $property->equiped=$request->equiped;
-        $property->url=str_replace(' ', '_',strtolower($request->title));
+        $transformedurl = str_replace(array("á", "é", "í", "ó","ú","ý","ô","ä"), array("a", "e", "i", "o","u","y","o","a"), $request->title);
+        $transformedurl = $text = iconv('UTF-8', 'US-ASCII//TRANSLIT', $transformedurl);
+        $property->url=str_replace(' ', '-',strtolower($transformedurl));
+        $property->no_user_id=$nouser->id;
         $property->save();
 		return redirect('admin/properties/add-property');
     }

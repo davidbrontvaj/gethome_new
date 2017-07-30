@@ -10,7 +10,7 @@ class PropertyOffer extends Controller
 {
 	public function showOffer()
     {
-    	$properties = RealProperty::orderBy('created_at', 'asc')->get();
+    	$properties = RealProperty::paginate(5);;
     	return view('offer',['properties' => $properties]);
     }
 

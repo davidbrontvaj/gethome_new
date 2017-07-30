@@ -215,18 +215,40 @@
 
 
 
-            </div>
 
 
-            
+    
+                <div class="form-group">
+                      <label for="nousername" class="control-label" >
+                      Meno zadávateľa</label>
+                      <input type="text" id="nousername" name="nousername" class="form-control">
+                </div>
 
 
+                
+                <div class="form-group">
+                      <label for="nousersurname" class="control-label">
+                      Priezvisko zadávateľa</label>
+                      <input type="text" id="nousersurname" name="nousersurname" class="form-control">
+                </div>
+
+                <div class="form-group">
+                      <label for="nouseremail" class="control-label">
+                      Email zadávateľa</label>
+                      <input type="email" id="nouseremail" name="nouseremail" class="form-control">
+                </div>
+
+                <div class="form-group">
+                      <label for="nouserphone" class="control-label">Telefón zadávateľa</label>
+                      <input type="text"  id="nouserphone" name="nouserphone" class="form-control">
+                </div>
 
             <div class="form-group">
 
                         <button type="submit" class="btn btn-success">Pridať realitu</button>
      
             </div>
+        </div>
 
             </form>
 

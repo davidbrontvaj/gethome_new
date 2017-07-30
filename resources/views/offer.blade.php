@@ -13,6 +13,7 @@
                         <div><a href="properties/{{$property->id}}/{{$property->url}}">{{$property->title}}</a></div>
                     @endforeach
                 </div>
+                {{ $properties->links() }}
             </div>
         </div>
     </div>
