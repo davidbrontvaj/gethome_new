@@ -39,7 +39,10 @@ Route::post('admin/administrators/create', 'AdminAuth\RegisterController@registe
 
 //Admin RealtyRegistration - new Realty
 Route::get('admin/properties/add-property','PropertiesController\AdminPropertiesController@showAddForm');
-Route::post('admin/properties/add-property','PropertiesController\AdminPropertiesController@addNewProperty');
+Route::post('admin/properties/all-properties','PropertiesController\AdminPropertiesController@addNewProperty');
+
+//Admin List of properties
+Route::get('admin/properties/list','PropertiesController\AdminPropertiesController@showAllProperties');
 // Admin & users Middlewares
 // /*******/
 
