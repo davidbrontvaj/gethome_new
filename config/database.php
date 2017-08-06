@@ -39,13 +39,29 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+       /* 'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '185.69.53.182'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'gethome'),
             'username' => env('DB_USERNAME', 'admin'),
             'password' => env('DB_PASSWORD', 'yu&DIeucJ1H#'),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
+        ], */
+
+
+       'mysql' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '33060'),
+            'database' => env('DB_DATABASE', 'gethome'),
+            'username' => env('DB_USERNAME', 'homestead'),
+            'password' => env('DB_PASSWORD', 'secret'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

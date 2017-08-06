@@ -22,6 +22,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// PROPERTIES 
+
+
+// Properties listing
+
+Route::get('properties2', function () {
+    return view('frontend.properties2');
+});
+
+
+
 //Property detail
 Route::get('properties','PropertyOffer@showOffer');
 Route::get('properties/{id_property}/{url_property}','PropertyOffer@showDetails');

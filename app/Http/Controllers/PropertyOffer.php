@@ -11,7 +11,7 @@ class PropertyOffer extends Controller
 	public function showOffer()
     {
     	$properties = RealProperty::paginate(5);;
-    	return view('offer',['properties' => $properties]);
+    	return view('frontend.properties',['properties' => $properties]);
     }
 
     public function showDetails($id_property,$url_property=NULL)
@@ -28,7 +28,7 @@ class PropertyOffer extends Controller
         //ak je kolekcia neprazdna tak idecko nehnutelnosti existuje, v takom pripade nas hodi na tu stranku na ktoru ma, inak vráti sa zoznam všetkych nehnutelnosti 
         if($properties->isNotEmpty())
         {
-            return view('property',['properties' => $properties]);            
+            return view('frontend.property',['properties' => $properties]);            
         }
         else
         {

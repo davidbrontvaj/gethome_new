@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 
-@section('title', 'Pridať realitu')
+@section('title', 'Pridať administrátora')
 
 
 @section('content_header')
