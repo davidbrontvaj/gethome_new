@@ -110,11 +110,16 @@ return [
     'menu' => [
         'SPRÁVA REALÍT',
         [
+            'text'        => 'Zoznam realít',
+            'url'         => 'admin/properties/list',
+            'icon'        => 'list',
+        ],
+
+        [
             'text'        => 'Pridať realitu',
             'url'         => 'admin/properties/add-property',
             'icon'        => 'plus-square',
         ],
-
 
         'SPRÁVA WEBU',
 
