@@ -26,6 +26,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 // PROPERTIES 
 
 
+// Add property
+
+Route::get('add-property', function () {
+    return view('frontend.add-property');
+});
+
 // Properties listing
 
 Route::get('properties2', function () {
