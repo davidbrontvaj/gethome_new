@@ -22,7 +22,10 @@
 <link rel="stylesheet" type="text/css" href=" {{ asset('css/range-Slider.min.css') }}">
 <link rel="stylesheet" type="text/css" href=" {{ asset('css/cubeportfolio.min.css') }}">
 
+
+
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
 
 </head>
 <body>
@@ -106,6 +109,7 @@
 	<script src="js/google-map.js') }}"></script>  -->
 	<script src="{{ asset('js/custom.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
+
 
 	<!-- Scripts end -->
 

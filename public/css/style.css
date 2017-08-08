@@ -4251,3 +4251,39 @@ ul.social_share {
 }
 
 
+
+/* MY HELPERS */
+
+
+
+/* ADD PROPERTY PAGE */
+
+
+#add-property .rounded-box {
+
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 30px;
+}
+
+#add-property h3 {
+
+	font-size: 16px;
+	color: #ccc;
+	padding: 10px 0 20px 0;
+	font-weight: 400;
+}
+
+
+.divider {
+
+	height: 1px;
+	background-color: #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	margin: 15px 0;
+}
+
+#add-property .radio-inline {
+
+	font-weight: normal;
+}
