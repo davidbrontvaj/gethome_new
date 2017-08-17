@@ -21,6 +21,51 @@
                 <h2 class="text-uppercase bottom40">Pridať nový inzerát</h2>
 
 
+                <div class="big-ordering bottom30">
+
+
+                  <div class="ordering-wrapper">
+                    
+                    <div class="big-ordering-number active">1</div>
+
+                    <div>Základné informácie</div>
+                                     
+                  </div>
+                  
+
+
+                  <div class="big-ordering-arrow">
+                      <i class="fa fa-arrow-right"></i>
+                  </div>
+
+
+
+                  <div class="ordering-wrapper">
+
+                    <div class="big-ordering-number empty">2</div>
+
+                    <div>Text 2</div>
+
+                  </div>
+
+
+
+                  <div class="big-ordering-arrow">
+                      <i class="fa fa-arrow-right"></i>
+                  </div>
+
+
+                  <div class="ordering-wrapper">
+                    <div class="big-ordering-number empty">3</div>
+                    <div>Text 3</div>
+                  </div>
+
+                </div>
+
+
+
+
+
                 <div class="rounded-box">
                   <div class="row">
                     <div class="col-md-8 col-md-offset-2">

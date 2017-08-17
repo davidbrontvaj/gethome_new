@@ -1314,6 +1314,15 @@ nav.navbar.bootsnav ul.dropdown-menu.megamenu-content.bg .col-menu{
 	font-size:14px;
 	color: #999999;
 }
+
+
+.callus input:focus {
+	border-color: #98cbe8;
+    outline: 0;
+
+}
+
+
 .callus textarea{
 	min-height:160px;
 	resize:none;
@@ -4307,6 +4316,57 @@ ul.social_share {
 }
 
 
+#add-property .big-ordering-number {
+
+    border-radius: 50%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 60px;
+    font-size: 20px;
+
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+}
+
+#add-property .big-ordering {
+
+	display: block;
+
+
+}
+
+
+#add-property .big-ordering .active {
+
+	background: #FFD119;
+    color: #fff;
+
+}
+
+#add-property .big-ordering .empty {
+
+	background: #000;
+    color: #fff;
+
+}
+
+
+#add-property .big-ordering .ordering-wrapper {
+
+display: inline-block;
+margin: 0 40px;
+
+}
+
+
+#add-property .big-ordering-arrow {
+
+display: inline-block;
+
+}
 
 #add-property .info {
 	font-size: 12px;

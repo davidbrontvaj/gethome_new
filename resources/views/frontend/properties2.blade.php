@@ -2,6 +2,15 @@
 
 @section('content')
 
+
+<!-- Search -->
+
+  @include('layouts.search')  
+
+
+<!-- Search End -->
+
+
  <!-- Listing Filer -->
 <section id="property" class="padding">
   <div class="container">
