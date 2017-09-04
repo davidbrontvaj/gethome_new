@@ -28,22 +28,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Add property
 
-Route::get('add-property', function () {
-    return view('frontend.add-property');
-});
-
+Route::get('add-property','PropertiesController\GeneralPropertiesController@addNewPropertyShowform');
+Route::post('add-property','PropertiesController\GeneralPropertiesController@postNewProperty');
 // Properties listing
 
-Route::get('properties2', function () {
-    return view('frontend.properties2');
-});
+Route::get('properties','PropertiesController\GeneralPropertiesController@showAllProperties');
 
 
 
 //Property detail
-Route::get('properties','PropertyOffer@showOffer');
-Route::get('properties/{id_property}/{url_property}','PropertyOffer@showDetails');
-Route::get('properties/{id_property}','PropertyOffer@showDetails');	
+Route::get('properties/{id_property}/{url_property}','PropertiesController\GeneralPropertiesController@showDetails');
+Route::get('properties/{id_property}','PropertiesController\GeneralPropertiesController@showDetails');
 // Admin login
 
 Route::post('admin_logout', 'AdminAuth\LoginController@logout');

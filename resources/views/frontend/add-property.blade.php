@@ -38,11 +38,11 @@
                                       <div class="clearfix"></div>
 
                                         <label class="radio-inline">
-                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ponúkam prenájom
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> Ponúkam prenájom
                                         </label>
 
                                         <label class="radio-inline">
-                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ponúkam spolubývanie
+                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="2"> Ponúkam spolubývanie
                                         </label>
 
                                     </div>
@@ -80,9 +80,9 @@
 
                                       <select name="type" class="form-control">
                                                
-                                          <option value="">1-izbový byt</option>
-                                          <option value="">2-izbový byt</option> 
-                                          <option value="">3-izbový byt</option> 
+                                          <option value="1">1-izbový byt</option>
+                                          <option value="2">2-izbový byt</option>
+                                          <option value="3">3-izbový byt</option>
                          
                                                            
                                       </select>

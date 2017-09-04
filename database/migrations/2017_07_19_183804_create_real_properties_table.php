@@ -14,26 +14,26 @@ class CreateRealPropertiesTable extends Migration
     public function up()
     {
         Schema::create('real_properties', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title');
-            $table->longText('description');
+            $table->increments('id')->nullable();
+            $table->string('title')->nullable();
+            $table->longText('description')->nullable();
             $table->bigInteger('disposition')->nullable();
             $table->bigInteger('type')->nullable();
-            $table->float('price');
-            $table->float('deposit');
-            $table->float('area');
+            $table->float('price')->nullable();
+            $table->float('deposit')->nullable();
+            $table->float('area')->nullable();
             $table->bigInteger('condition')->nullable(); 
             $table->bigInteger('equiped')->nullable();
             $table->binary('parameters')->nullable();  
-            $table->string('address_street');       
-            $table->string('address_city');
+            $table->string('address_street')->nullable();
+            $table->string('address_city')->nullable();
             $table->binary('images')->nullable();
-            $table->date('available_from'); 
+            $table->date('available_from')->nullable();
             $table->timestamps();
             $table->bigInteger('user_id')->nullable();
-            $table->boolean('published');
-            $table->boolean('active');
-            $table->string('url');
+            $table->boolean('published')->nullable();
+            $table->boolean('active')->nullable();
+            $table->string('url')->nullable();
             $table->bigInteger('no_user_id')->nullable();
         });
     }

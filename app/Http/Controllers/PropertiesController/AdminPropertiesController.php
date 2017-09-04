@@ -68,11 +68,5 @@ class AdminPropertiesController extends Controller
 		return redirect('admin/properties/add-property');
     }
 
-public function showAllProperties()
-    {
-        $properties=RealProperty::orderBy('id', 'asc')->get();
-        return view('admin.properties.AllProperties',[
-            'properties' => $properties]);   
-    }   
 }
 
