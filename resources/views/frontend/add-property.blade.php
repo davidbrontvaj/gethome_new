@@ -80,10 +80,17 @@
 
                                       <select name="disposition" class="form-control">
 
-                                          <option value="1">1-izbový byt</option>
-                                          <option value="2">2-izbový byt</option>
-                                          <option value="3">3-izbový byt</option>
-                         
+                                          @foreach ($dispositions as $disposition)
+                                              @if($disposition->order==1)
+                                                  {
+                                                  <option selected="selected" value={{$disposition->id}}>{{$disposition->name}}</option>
+                                                  }
+                                              @else
+                                                  {
+                                                  <option value={{$disposition->id}}>{{$disposition->name}}</option>
+                                                  }
+                                              @endif
+                                          @endforeach
                                                            
                                       </select>
                                     
@@ -208,8 +215,18 @@
                                     <div class="form-group">
                                             <label for="condition" class="control-label">Stav bytu</label>
                                                 <select name="condition" class="form-control">
-                                                  
-                                                        <option selected="selected" value=""></option>
+
+                                                    @foreach ($conditions as $condition)
+                                                        @if($condition->order==1)
+                                                            {
+                                                            <option selected="selected" value={{$condition->id}}>{{$condition->name}}</option>
+                                                            }
+                                                        @else
+                                                            {
+                                                            <option value={{$condition->id}}>{{$condition->name}}</option>
+                                                            }
+                                                        @endif
+                                                    @endforeach
                                                                                  
                                                 </select>
                          
@@ -226,10 +243,18 @@
                                 <div class="form-group bottom40">
                                             <label for="equiped" class="control-label">Zariadenie bytu</label>
                                                 <select name="equiped" class="form-control">
-                                                 
-                                                        <option selected="selected" value=""></option>
-                                                  
-                                                      <option value=""></option> 
+
+                                                    @foreach ($equipments as $equipment)
+                                                        @if($equipment->order==1)
+                                                            {
+                                                            <option selected="selected" value={{$equipment->id}}>{{$equipment->name}}</option>
+                                                            }
+                                                        @else
+                                                            {
+                                                            <option value={{$equipment->id}}>{{$equipment->name}}</option>
+                                                            }
+                                                        @endif
+                                                    @endforeach
                                                 
                                                 </select>
                                 </div>
