@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 //load Models (classes)
 use App\RealProperty;
-use App\RealNoUserContact;
 use App\RealDisposition;
 use App\RealEquipment;
 use App\RealType;
@@ -15,30 +14,6 @@ use App\RealCondition;
 class GeneralPropertiesController extends Controller
 {
 
-    public function postNewProperty(Request $request)
-    {
-        $property = new RealProperty;
-        $property->title = $request->title;
-        $property->description = $request->description;
-        $property->disposition=$request->disposition;
-        $property->price = $request->price;
-        $property->deposit = $request->deposit;
-        $property->area = $request->area;
-        $property->address_street = $request->address_street;
-        $property->address_city = $request->address_city;
-        $date = str_replace('.', '-', $request->available_from);
-        $property->available_from = date('Y-m-d', strtotime($date));
-        $property->published=1;
-        $property->active=1;
-        $property->condition=$request->condition;
-        $property->type=$request->type;
-        $property->equiped=$request->equiped;
-        $transformedurl = str_replace(array("á", "é", "í", "ó","ú","ý","ô","ä"), array("a", "e", "i", "o","u","y","o","a"), $request->title);
-        $transformedurl = $text = iconv('UTF-8', 'US-ASCII//TRANSLIT', $transformedurl);
-        $property->url=str_replace(' ', '-',strtolower($transformedurl));
-        $property->save();
-        return redirect('properties');
-    }
 
 
     public function addNewPropertyShowform()
@@ -56,6 +31,34 @@ class GeneralPropertiesController extends Controller
             'equipments' => $equipments,
             'types' => $types,
             'conditions' => $conditions ]);
+    }
+
+
+    public function postNewProperty(Request $request)
+    {
+        $property = new RealProperty;
+        $property->title = $request->title;
+        $property->description = $request->description;
+        $property->disposition=$request->disposition;
+        $property->price = $request->price;
+        $property->deposit = $request->deposit;
+        $property->area = $request->area;
+        $property->address_street = $request->address_street;
+        //V sucasnosti to bude mat default value
+        $property->address_city = 1;
+        //$property->address_city = $request->address_city;
+        $date = str_replace('.', '-', $request->available_from);
+        $property->available_from = date('Y-m-d', strtotime($date));
+        $property->published=1;
+        $property->active=1;
+        $property->condition=$request->condition;
+        $property->type=$request->type;
+        $property->equiped=$request->equiped;
+        $transformedurl = str_replace(array("á", "é", "í", "ó","ú","ý","ô","ä"), array("a", "e", "i", "o","u","y","o","a"), $request->title);
+        $transformedurl = $text = iconv('UTF-8', 'US-ASCII//TRANSLIT', $transformedurl);
+        $property->url=str_replace(' ', '-',strtolower($transformedurl));
+        $property->save();
+        return redirect('properties');
     }
 
     public function showAllProperties()

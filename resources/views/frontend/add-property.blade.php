@@ -78,8 +78,8 @@
 
                                   <label for="disposition" class="control-label">Dispozícia bytu</label>
 
-                                      <select name="type" class="form-control">
-                                               
+                                      <select name="disposition" class="form-control">
+
                                           <option value="1">1-izbový byt</option>
                                           <option value="2">2-izbový byt</option>
                                           <option value="3">3-izbový byt</option>
@@ -99,16 +99,16 @@
 
                                     </div>
 
-                                    <div class="form-group">    
+                                    <div class="form-group">
 
 
 
-                                            <label for="type" class="control-label">Mesto</label>
-                                                <select name="type" class="form-control" disabled>
-                                               
-                                                  <option selected="selected" value="">Bratislava</option>
-                         
-                                                           
+                                            <label for="address_city" class="control-label">Mesto</label>
+                                                <select name="address_city" class="form-control" disabled>
+
+                                                  <option selected="selected" value="1">Bratislava</option>
+
+
                                                 </select>
                                                    <span class="info">
                                                    <i class="fa fa-warning"></i>
