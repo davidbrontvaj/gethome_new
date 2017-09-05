@@ -64,7 +64,10 @@ class GeneralPropertiesController extends Controller
     public function showAllProperties()
     {
         $properties=RealProperty::orderBy('id', 'desc')->get();
-        return view('frontend.properties2',['properties' => $properties]);
+        $dispositions = RealDisposition::orderBy('order', 'asc')->get();
+        $types = RealType::orderBy('order', 'asc')->get();
+        return view('frontend.properties2',['properties' => $properties,
+            'dispositions' => $dispositions,'types' => $types]);
     }
 
 
