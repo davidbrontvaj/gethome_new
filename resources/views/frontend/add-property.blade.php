@@ -25,7 +25,7 @@
                   <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                 
-                                <form role="form" method="POST" action="add-property" class="callus border_radius submit_property"> 
+                                <form role="form" method="POST" action="add-property" class="callus border_radius submit_property" enctype='multipart/form-data'> 
 
                                     {{ csrf_field() }}
 
@@ -198,7 +198,7 @@
 
                                     <div class="form-group">
                                           <label for="exampleInputFile">Fotografie</label>
-                                          <input type="file" id="exampleInputFile">
+                                          <input type="file" name="photos[]" multiple />
                                     </div>
 
 
