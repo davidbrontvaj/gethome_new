@@ -10,6 +10,7 @@ use App\RealDisposition;
 use App\RealEquipment;
 use App\RealType;
 use App\RealCondition;
+use App\Propertyphoto;
 
 class GeneralPropertiesController extends Controller
 {
@@ -58,6 +59,13 @@ class GeneralPropertiesController extends Controller
         $transformedurl = $text = iconv('UTF-8', 'US-ASCII//TRANSLIT', $transformedurl);
         $property->url=str_replace(' ', '-',strtolower($transformedurl));
         $property->save();
+        foreach ($request->photos as $photo) {
+            $filename = $photo->store('photos');
+            $photo=new Propertyphoto;
+            $photo->testproperty_id=$property->id;
+            $photo->filename = $filename;
+            $photo->save();
+        }
         return redirect('properties');
     }
 
