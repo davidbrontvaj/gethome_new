@@ -4,6 +4,7 @@ namespace App\Http\Controllers\PropertiesController;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UploadRequest;
 //load Models (classes)
 use App\RealProperty;
 use App\RealDisposition;
@@ -35,7 +36,7 @@ class GeneralPropertiesController extends Controller
     }
 
 
-    public function postNewProperty(Request $request)
+    public function postNewProperty(UploadRequest $request)
     {
         $property = new RealProperty;
         $property->title = $request->title;
