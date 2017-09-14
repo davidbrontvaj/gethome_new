@@ -197,7 +197,17 @@
 
 
                                     <div class="form-group">
+
                                           <label for="exampleInputFile">Fotografie</label>
+                                        
+
+                                          @if (count($errors) > 0)
+                                              <ul>
+                                                  @foreach ($errors->all() as $error)
+                                                      <li>{{ $error }}</li>
+                                                  @endforeach
+                                              </ul>
+                                          @endif
                                           <input type="file" name="photos[]" multiple />
                                     </div>
 
