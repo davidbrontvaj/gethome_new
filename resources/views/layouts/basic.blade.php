@@ -7,7 +7,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
@@ -437,7 +436,7 @@
 	<script src="js/google-map.js') }}"></script>  -->
 	<script src="{{ asset('js/custom.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
-
+  <script src="{{ asset('js/validate_form.js')}}"></script>
 	<!-- Scripts end -->
 
 </body>
