@@ -14,7 +14,7 @@ class CreateRealPropertiesTable extends Migration
     public function up()
     {
         Schema::create('real_properties', function (Blueprint $table) {
-            $table->increments('id')->nullable();
+            $table->increments('id');
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->bigInteger('disposition')->nullable();
