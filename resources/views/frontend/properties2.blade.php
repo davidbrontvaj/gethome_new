@@ -42,7 +42,17 @@
               </div>
 
               <div class="favroute clearfix">
-                <p><i class="icon-calendar2"></i> Pred {{ceil(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)}}  dňami </p>
+                <p><i class="icon-calendar2"></i> Pridané
+                  @if (floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)==0)
+                    dnes
+                  @elseif (floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)==1)
+                    pred 1 dňom
+                  @elseif (floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)<8)
+                    pred {{floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)}}  dňami
+                  @else
+                        {{date('d.m.Y', strtotime($property->created_at))}}
+                  @endif
+                </p>
                 <ul class="pull-right">
                   <li  class="innactiveproperty" ><a href="#"><i class="icon-warning"></i></a></li> <!-- Nahlasit neaktualny inzerat -->
                 </ul>
