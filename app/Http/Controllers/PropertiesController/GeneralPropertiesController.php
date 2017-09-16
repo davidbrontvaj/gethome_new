@@ -11,7 +11,9 @@ use App\RealDisposition;
 use App\RealEquipment;
 use App\RealType;
 use App\RealCondition;
+use App\InactiveProperty;
 use App\Propertyphoto;
+
 
 class GeneralPropertiesController extends Controller
 {
@@ -101,5 +103,12 @@ class GeneralPropertiesController extends Controller
             return redirect('properties');
         }
 
+    }
+
+    public function markAsInactive(Request $request) {
+        $property = new InactiveProperty;
+        $property->title = $request->title;
+        $property->property_id = $request->property_id;
+        $property->save();
     }
 }

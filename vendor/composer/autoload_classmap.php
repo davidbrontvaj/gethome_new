@@ -29,6 +29,9 @@ return array(
     'App\\Http\\Middleware\\RedirectIfAuthenticated' => $baseDir . '/app/Http/Middleware/RedirectIfAuthenticated.php',
     'App\\Http\\Middleware\\TrimStrings' => $baseDir . '/app/Http/Middleware/TrimStrings.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
+    'App\\InactiveProperty' => $baseDir . '/app/InactiveProperty.php',
+    'App\\InnactiveProperties' => $baseDir . '/app/InnactiveProperties.php',
+    'App\\InnactiveProperty' => $baseDir . '/app/InnactiveProperty.php',
     'App\\PropertyPhoto' => $baseDir . '/app/PropertyPhoto.php',
     'App\\Propertyphoto' => $baseDir . '/app/Propertyphoto.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
@@ -48,6 +51,8 @@ return array(
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'CreateAdminsTable' => $baseDir . '/database/migrations/2017_07_11_185236_create_admins_table.php',
+    'CreateInactivePropertiesTable' => $baseDir . '/database/migrations/2017_09_14_223536_create_inactive_properties_table.php',
+    'CreateInnactivePropertiesTable' => $baseDir . '/database/migrations/2017_09_14_211733_create_innactive_properties_table.php'
     'CreatePropertyPhotosTable' => $baseDir . '/database/migrations/2017_09_13_191851_create_property_photos_table.php',
     'CreatePropertyphotosTable' => $baseDir . '/database/migrations/2017_09_13_081841_create_propertyphotos_table.php',
     'CreateRealConditionsTable' => $baseDir . '/database/migrations/2017_07_19_200219_create_real_conditions_table.php',

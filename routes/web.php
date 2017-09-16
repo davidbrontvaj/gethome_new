@@ -34,6 +34,8 @@ Route::post('add-property','PropertiesController\GeneralPropertiesController@pos
 
 Route::get('properties','PropertiesController\GeneralPropertiesController@showAllProperties');
 
+//Inactive properties
+Route::post('inactiveproperty','PropertiesController\GeneralPropertiesController@markAsInactive');
 //Property detail
 Route::get('properties/{id_property}/{url_property}','PropertiesController\GeneralPropertiesController@showDetails');
 Route::get('properties/{id_property}','PropertiesController\GeneralPropertiesController@showDetails');

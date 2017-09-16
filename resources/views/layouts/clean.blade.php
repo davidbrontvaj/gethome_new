@@ -108,6 +108,7 @@
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&libraries=places"></script> 
 	<script src="js/google-map.js') }}"></script>  -->
 	<script src="{{ asset('js/custom.js') }}"></script>
+  <script src="{{ asset('js/validate_form.js') }}"></script>
 	<script src="{{ asset('js/functions.js') }}"></script>
 
 

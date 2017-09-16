@@ -16,7 +16,7 @@
 
 
       @foreach ($properties as $property)
-        <div class="cbp-item sale">
+        <div class="cbp-item sale parent" data-id={{$property->id}}> 
           <div class="property_item">
             <div class="image">
               <a href=properties/{{$property->id}}><img src="images/listing1.jpg" alt="latest property" class="img-responsive"></a> <!-- hlavny obrazok -->
@@ -28,7 +28,7 @@
             </div>
             <div class="proerty_content">
               <div class="proerty_text">
-                <h3><a href=properties/{{$property->id}}>{{$property->title}}</a></h3><!-- hlavný nadpis -->
+                <h3><a class="titleofproperty" href=properties/{{$property->id}}>{{$property->title}}</a></h3><!-- hlavný nadpis -->
                 <p>{{$property->address_street}}, {{$property->address_city}}</p> <!-- Lokalita -->
               </div>
               <div class="property_meta transparent">
@@ -42,16 +42,25 @@
               </div>
 
               <div class="favroute clearfix">
-                <p><i class="icon-calendar2"></i> Pred {{ceil(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)}}  dňami </p>
+                <p><i class="icon-calendar2"></i> Pridané
+                  @if (floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)==0)
+                    dnes
+                  @elseif (floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)==1)
+                    pred 1 dňom
+                  @elseif (floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)<8)
+                    pred {{floor(abs(strtotime(date('Y-m-d')) -strtotime($property->created_at))/86400)}}  dňami
+                  @else
+                        {{date('d.m.Y', strtotime($property->created_at))}}
+                  @endif
+                </p>
                 <ul class="pull-right">
-                  <li><a href="#"><i class="icon-warning"></i></a></li> <!-- Nahlasit neaktualny inzerat -->
+                  <li  class="innactiveproperty" ><a href="#"><i class="icon-warning"></i></a></li> <!-- Nahlasit neaktualny inzerat -->
                 </ul>
               </div>
             </div>
           </div>
         </div>
       @endforeach
-
 
     </div>
   </div>
