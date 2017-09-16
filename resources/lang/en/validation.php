@@ -52,11 +52,11 @@ return [
     'json'                 => 'The :attribute must be a valid JSON string.',
     'max'                  => [
         'numeric' => 'The :attribute may not be greater than :max.',
-        'file'    => 'The :attribute may not be greater than :max kilobytes.',
+        'file'    => 'Neuspešný upload. Žiaden z obrázkov nesmie mať viac ako 8 MB.',
         'string'  => 'The :attribute may not be greater than :max characters.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
-    'mimes'                => 'The :attribute must be a file of type: :values.',
+    'mimes'                => 'Prosím nahravájte súbory len vo formátoch: :values.',
     'mimetypes'            => 'The :attribute must be a file of type: :values.',
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',
@@ -85,7 +85,7 @@ return [
     'string'               => 'The :attribute must be a string.',
     'timezone'             => 'The :attribute must be a valid zone.',
     'unique'               => 'The :attribute has already been taken.',
-    'uploaded'             => 'The :attribute failed to upload.',
+    'uploaded'             => 'Upload bol neuspešný',
     'url'                  => 'The :attribute format is invalid.',
 
     /*
