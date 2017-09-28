@@ -4,15 +4,9 @@ database/migrations/2014_10_12_100000_create_password_resets_table.php
 config/database.php
 .env
 artisan
-composer.json
-composer.lock
-package.json
 phpuniy.xml
 server.php
-webpack.mix.js
-yarn.lock
 /node_modules
-/vendor
 /.idea
 /.vagrant
 Homestead.json
