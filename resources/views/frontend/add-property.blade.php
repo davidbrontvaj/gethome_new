@@ -63,7 +63,7 @@
                                         <label for="available_from" class="control-label">Dostupný od:</label>
                                         <div class="row">
                                             <div class='col-sm-12'>
-                                                <div class="input-group date" data-provide="datepicker">
+                                                <div class="input-group date width-100" data-provide="datepicker">
                                                     <div class='input-group date' id='datetimepicker1'>
                                                         <input type='text' class="form-control" />
                                                         <span class="input-group-addon">
