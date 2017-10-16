@@ -20,6 +20,7 @@
 <link rel="stylesheet" type="text/css" href=" {{ asset('css/search.css') }}">
 <link rel="stylesheet" type="text/css" href=" {{ asset('css/range-Slider.min.css') }}">
 <link rel="stylesheet" type="text/css" href=" {{ asset('css/cubeportfolio.min.css') }}">
+  <link rel="stylesheet" type="text/css" href=" {{ asset('lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css') }}">
 
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 
@@ -431,7 +432,8 @@
 	<script src="{{ asset('js/revolution.extension.parallax.min.js') }}"></script>
 	<script src="{{ asset('js/revolution.extension.slideanims.min.js') }}"></script>
 	<script src="{{ asset('js/revolution.extension.video.min.js') }}"></script>
-	<!--    <script src="{{ asset('js/neary-by-place.js') }}"></script> 
+	<script src="{{ asset('lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js') }}"></script>
+	<!--    <script src="{{ asset('js/neary-by-place.js') }}"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAOBKD6V47-g_3opmidcmFapb3kSNAR70U&libraries=places"></script> 
 	<script src="js/google-map.js') }}"></script>  -->
 	<script src="{{ asset('js/custom.js') }}"></script>

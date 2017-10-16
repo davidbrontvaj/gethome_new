@@ -7,3 +7,7 @@ function setup() {
 	
 	// change style for select box
         $(".selectbox").selectbox();
+
+
+
+ $('#datetimepicker').data("DateTimePicker");

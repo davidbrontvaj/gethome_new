@@ -63,10 +63,12 @@
                                         <label for="available_from" class="control-label">Dostupný od:</label>
 
                                         <div class="input-group date" data-provide="datepicker">
-                                          <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                          </div>
-                                          <input type="text" class="form-control pull-right" name="available_from" id="datepicker">
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
                                         </div>
                                         <!-- /.input group -->
                                   </div>
