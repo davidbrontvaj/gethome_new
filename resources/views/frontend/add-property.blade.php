@@ -38,11 +38,13 @@
                                       <div class="clearfix"></div>
 
                                         <label class="radio-inline">
-                                            <input type="radio" name="type" id="inlineRadio1" value="1"> Ponúkam prenájom
+                                            <input type="radio" name="type" id="inlineRadio1" value="1">
+                                            <span>Ponúkam prenájom</span>
                                         </label>
 
                                         <label class="radio-inline">
-                                            <input type="radio" name="type" id="inlineRadio1" value="2"> Ponúkam spolubývanie
+                                            <input type="radio" name="type" id="inlineRadio1" value="2">
+                                            <span>Ponúkam spolubývanie</span>
                                         </label>
 
                                     </div>

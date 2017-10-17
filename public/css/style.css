@@ -4286,12 +4286,80 @@ ul.social_share {
 }
 
 #add-property .radio-inline {
-
 	font-weight: normal;
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+	margin-right: 15px;
+}
+#add-property .radio-inline input {
+	position: absolute;
+	left: -5000px;
 }
 
-#add-property .ordering-number {
+#add-property .radio-inline input:checked + span {
+	color: #1F3F81;
+}
 
+#add-property .radio-inline > span {
+	display: block;
+	font-size: 16px;
+	line-height: 25px;
+	padding: 0 0 0 15px;
+	-webkit-transition: color 0.2s;
+	-moz-transition: color 0.2s;
+	-o-transition: color 0.2s;
+	-ms-transition: color 0.2s;
+	transition: color 0.2s;
+}
+#add-property .radio-inline input:checked + span:before, #add-property .radio-inline:hover > span:before {
+	border-color: #1F3F81;
+}
+
+#add-property .radio-inline > span:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 2px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #dfe0e1;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-transition: border-color 0.2s;
+	-moz-transition: border-color 0.2s;
+	-o-transition: border-color 0.2s;
+	-ms-transition: border-color 0.2s;
+	transition: border-color 0.2s;
+}
+
+#add-property .radio-inline input:checked + span:after {
+	opacity: 1;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+
+#add-property .radio-inline > span:after {
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: 8px;
+	width: 8px;
+	height: 8px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background: #1F3F81;
+	opacity: 0;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+	-webkit-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+
+#add-property .ordering-number {
 	background: #FFD119;
     border-radius: 50%;
     height: 30px;
@@ -4300,13 +4368,9 @@ ul.social_share {
     width: 30px;
     font-size: 20px;
     color: #fff;
-
     display: inline-block;
-
     margin-right: 15px;
 }
-
-
 
 #add-property .info {
 	font-size: 12px;
