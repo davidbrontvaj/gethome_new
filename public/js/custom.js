@@ -10,4 +10,4 @@ function setup() {
 
 
 
- $('#datetimepicker').data("DateTimePicker");
+ $('#datetimepicker').datetimepicker();

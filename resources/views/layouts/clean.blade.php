@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href=" {{ asset('css/range-Slider.min.css') }}">
     <link rel="stylesheet" type="text/css" href=" {{ asset('css/cubeportfolio.min.css') }}">
     <link rel="stylesheet"
-          href="{{ asset('lib/eonasdan-bootstrap-datetimepicker/src/css/bootstrap-datetimepicker.min.css') }}">
+          href="{{ asset('lib/smalot-bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css') }}">
 
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin-ext"
@@ -103,7 +103,7 @@
 <script src="{{ asset('js/revolution.extension.slideanims.min.js') }}"></script>
 <script src="{{ asset('js/revolution.extension.video.min.js') }}"></script>
 <script src="{{ asset('lib/moment/src/moment.js') }}"></script>
-<script src="{{ asset('lib/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js') }}"></script>
+<script src="{{ asset('lib/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.js') }}"></script>
 
 
 <!--    <script src="{{ asset('js/neary-by-place.js') }}"></script>
