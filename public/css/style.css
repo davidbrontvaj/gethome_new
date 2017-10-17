@@ -4315,3 +4315,6 @@ ul.social_share {
 .width-100 {
 	width: 100%;
 }
+#datetimepicker1 .input-group-addon {
+	cursor: pointer;
+}
