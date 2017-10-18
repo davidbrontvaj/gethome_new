@@ -3469,28 +3469,35 @@
     },
     {
         "name": "jeroennoten/laravel-adminlte",
-        "version": "v1.19.2",
-        "version_normalized": "1.19.2.0",
+        "version": "v1.21.0",
+        "version_normalized": "1.21.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-            "reference": "14c89386a2861086ce6006745a7389a90a6916e8"
+            "reference": "34a0915f8daa9fd88b5f50f07d4379c8798482d5"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/14c89386a2861086ce6006745a7389a90a6916e8",
-            "reference": "14c89386a2861086ce6006745a7389a90a6916e8",
+            "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/34a0915f8daa9fd88b5f50f07d4379c8798482d5",
+            "reference": "34a0915f8daa9fd88b5f50f07d4379c8798482d5",
             "shasum": ""
         },
         "require": {
-            "laravel/framework": "~5.1.12|~5.2.0|~5.3.0|~5.4.0",
+            "laravel/framework": "~5.1.12|~5.2.0|~5.3.0|~5.4.0|~5.5.0",
             "php": ">=5.5.9"
         },
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2017-03-30T11:46:56+00:00",
+        "time": "2017-09-18T23:06:27+00:00",
         "type": "library",
+        "extra": {
+            "laravel": {
+                "providers": [
+                    "JeroenNoten\\LaravelAdminLte\\ServiceProvider"
+                ]
+            }
+        },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
