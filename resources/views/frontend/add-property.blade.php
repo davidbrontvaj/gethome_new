@@ -2,47 +2,49 @@
 
 @section('content')
 
- <!-- Add new property section -->
-<section id="add-property" class="padding listing1">
+    <!-- Add new property section -->
+    <section id="add-property" class="padding listing1">
 
 
-<div class="container">
+        <div class="container">
 
 
-    <div class="row">
-          
-          <div class="col-sm-1 col-md-2"></div>
+            <div class="row">
 
-            
-
-           <div class="col-sm-10 col-md-8">
-
-                
-                <h2 class="text-uppercase bottom40">Pridať nový inzerát</h2>
+                <div class="col-sm-1 col-md-2"></div>
 
 
-                <div class="rounded-box">
-                  <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                
-                                <form role="form" method="POST" action="add-property" class="callus border_radius submit_property" enctype='multipart/form-data'> 
+                <div class="col-sm-10 col-md-8">
+
+
+                    <h2 class="text-uppercase bottom40">Pridať nový inzerát</h2>
+
+
+                    <div class="rounded-box">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2">
+
+                                <form role="form" method="POST" action="add-property"
+                                      class="callus border_radius submit_property" enctype='multipart/form-data'>
 
                                     {{ csrf_field() }}
 
                                     <div class="form-group bottom30">
 
-                                      
-                                      <div class="ordering-number">1</div>
-                                      <h3 class="ordering-headline">Typ inzerátu</h3>    
 
-                                      <div class="clearfix"></div>
+                                        <div class="ordering-number">1</div>
+                                        <h3 class="ordering-headline">Typ inzerátu</h3>
+
+                                        <div class="clearfix"></div>
 
                                         <label class="radio-inline">
-                                            <input type="radio" name="type" id="inlineRadio1" value="1"> Ponúkam prenájom
+                                            <input type="radio" name="type" id="inlineRadio1" value="1"> Ponúkam
+                                            prenájom
                                         </label>
 
                                         <label class="radio-inline">
-                                            <input type="radio" name="type" id="inlineRadio1" value="2"> Ponúkam spolubývanie
+                                            <input type="radio" name="type" id="inlineRadio1" value="2"> Ponúkam
+                                            spolubývanie
                                         </label>
 
                                     </div>
@@ -51,145 +53,147 @@
                                     <div class="divider"></div>
 
 
+                                    <div class="ordering-number">2</div>
+                                    <h3 class="ordering-headline">Základné informácie (povinné)</h3>
 
-                                       <div class="ordering-number">2</div>
-                                        <h3 class="ordering-headline">Základné informácie (povinné)</h3>
+                                    <div class="clearfix"></div>
 
-                                        <div class="clearfix"></div>
-
-                                        <div class="form-group">
+                                    <div class="form-group">
 
 
                                         <label for="available_from" class="control-label">Dostupný od:</label>
-
-                                        <div class="input-group date" data-provide="datepicker">
-                                          <div class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                          </div>
-                                          <input type="text" class="form-control pull-right" name="available_from" id="datepicker">
+                                        <div class="row">
+                                            <div class='col-sm-12'>
+                                                <div class="input-group date width-100" data-provide="datepicker">
+                                                    <div class='input-group date' id='datetimepicker1'>
+                                                        <input type='text' class="form-control"/>
+                                                        <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <!-- /.input group -->
-                                  </div>
-                                  <!-- /.form group -->
+                                    </div>
+                                    <!-- /.form group -->
 
 
+                                    <div class="form-group">
 
-                                  <div class="form-group">
+                                        <label for="disposition" class="control-label">Dispozícia bytu</label>
 
-                                  <label for="disposition" class="control-label">Dispozícia bytu</label>
+                                        <select name="disposition" class="form-control">
 
-                                      <select name="disposition" class="form-control">
+                                            @foreach ($dispositions as $disposition)
+                                                @if($disposition->order==1)
+                                                    {
+                                                    <option selected="selected"
+                                                            value={{$disposition->id}}>{{$disposition->name}}</option>
+                                                    }
+                                                @else
+                                                    {
+                                                    <option value={{$disposition->id}}>{{$disposition->name}}</option>
+                                                    }
+                                                @endif
+                                            @endforeach
 
-                                          @foreach ($dispositions as $disposition)
-                                              @if($disposition->order==1)
-                                                  {
-                                                  <option selected="selected" value={{$disposition->id}}>{{$disposition->name}}</option>
-                                                  }
-                                              @else
-                                                  {
-                                                  <option value={{$disposition->id}}>{{$disposition->name}}</option>
-                                                  }
-                                              @endif
-                                          @endforeach
-                                                           
-                                      </select>
-                                    
-
-                                  </div>
+                                        </select>
 
 
+                                    </div>
 
-                                     <div class="form-group">    
 
-                                            <label for="price" class="control-label">Počet postelí</label>
-                                            <input class="form-control" type="number" name="beds"><br>
+                                    <div class="form-group">
+
+                                        <label for="price" class="control-label">Počet postelí</label>
+                                        <input class="form-control" type="number" name="beds"><br>
 
                                     </div>
 
                                     <div class="form-group">
 
 
+                                        <label for="address_city" class="control-label">Mesto</label>
+                                        <select name="address_city" class="form-control" disabled>
 
-                                            <label for="address_city" class="control-label">Mesto</label>
-                                                <select name="address_city" class="form-control" disabled>
-
-                                                  <option selected="selected" value="1">Bratislava</option>
+                                            <option selected="selected" value="1">Bratislava</option>
 
 
-                                                </select>
-                                                   <span class="info">
+                                        </select>
+                                        <span class="info">
                                                    <i class="fa fa-warning"></i>
                                                    V tomto momente je možné pridať len inzeráty v meste Bratislava.</span>
                                     </div>
 
 
+                                    <div class="form-group">
 
-                                    <div class="form-group">    
-                                                         
-                                            <label for="address_street" class="control-label">Ulica</label>
-                                            <input class="form-control" type="text" name="address_street" value="{{ old('address_street') }} ">
-                                                  
-                                    </div>
-
-                                  
-
-                                              <div class="divider"></div>
-
-                                     <div class="ordering-number">3</div>
-                                      <h3 class="ordering-headline">Cena (povinné)</h3>
-
-                                      <div class="clearfix"></div>
-
-                                    <div class="form-group">    
-
-                                            <label for="price" class="control-label">Cena</label>
-                                            <input class="form-control" type="number" name="price"><br>
+                                        <label for="address_street" class="control-label">Ulica</label>
+                                        <input class="form-control" type="text" name="address_street"
+                                               value="{{ old('address_street') }} ">
 
                                     </div>
 
 
-                                    <div class="form-group">    
+                                    <div class="divider"></div>
+
+                                    <div class="ordering-number">3</div>
+                                    <h3 class="ordering-headline">Cena (povinné)</h3>
+
+                                    <div class="clearfix"></div>
+
+                                    <div class="form-group">
+
+                                        <label for="price" class="control-label">Cena</label>
+                                        <input class="form-control" type="number" name="price"><br>
+
+                                    </div>
 
 
+                                    <div class="form-group">
 
-                                            <label for="deposit" class="control-label">Depozit</label>
 
-                                            <div class="clearfix"></div>
+                                        <label for="deposit" class="control-label">Depozit</label>
 
-                                                                 <label class="radio-inline">
-                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked> Áno
+                                        <div class="clearfix"></div>
+
+                                        <label class="radio-inline">
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                                   value="option1" checked> Áno
                                         </label>
 
                                         <label class="radio-inline">
-                                        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Nie
+                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                                   value="option1"> Nie
                                         </label>
 
 
-                                            <input class="form-control top20" type="number" name="deposit"><br>
+                                        <input class="form-control top20" type="number" name="deposit"><br>
 
                                     </div>
 
 
+                                    <div class="divider"></div>
 
-                                      <div class="divider"></div>
+                                    <div class="ordering-number">4</div>
+                                    <h3 class="ordering-headline">Inzerát a fotografie</h3>
 
-                                     <div class="ordering-number">4</div>
-                                      <h3 class="ordering-headline">Inzerát a fotografie</h3>
-
-                                      <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
 
 
-                                        <div class="form-group">
-                    
-                                                                 
+                                    <div class="form-group">
+
+
                                         <label for="title" class="control-label">Nadpis</label>
-                                        <input class="form-control" type="text" name="title" value="{{ old('title') }} ">
+                                        <input class="form-control" type="text" name="title"
+                                               value="{{ old('title') }} ">
 
                                     </div>
 
 
-                                    <div class="form-group">    
-                                                                 
+                                    <div class="form-group">
+
                                         <label for="description" class="control-label">Popis</label>
                                         <textarea name="description" class="form-control" rows="4"></textarea>
 
@@ -198,169 +202,169 @@
 
                                     <div class="form-group">
 
-                                          <label for="exampleInputFile">Fotografie</label>
-                                        
+                                        <label for="exampleInputFile">Fotografie</label>
 
-                                          @if (count($errors) > 0)
-                                              <ul>
-                                                  @foreach ($errors->all() as $error)
-                                                      <li>{{ $error }}</li>
-                                                  @endforeach
-                                              </ul>
-                                          @endif
-                                          <input type="file" name="photos[]" multiple />
+
+                                        @if (count($errors) > 0)
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                        <input type="file" name="photos[]" multiple/>
                                     </div>
 
 
+                                    <div class="divider"></div>
 
+                                    <div class="ordering-number">5</div>
+                                    <h3 class="ordering-headline">Ďaľšie informácie (nepovinné)</h3>
 
-                                      <div class="divider"></div>
-
-                                     <div class="ordering-number">5</div>
-                                      <h3 class="ordering-headline">Ďaľšie informácie (nepovinné)</h3>
-
-                                      <div class="clearfix"></div>
+                                    <div class="clearfix"></div>
 
 
                                     <div class="form-group">
-                                            <label for="condition" class="control-label">Stav bytu</label>
-                                                <select name="condition" class="form-control">
+                                        <label for="condition" class="control-label">Stav bytu</label>
+                                        <select name="condition" class="form-control">
 
-                                                    @foreach ($conditions as $condition)
-                                                        @if($condition->order==1)
-                                                            {
-                                                            <option selected="selected" value={{$condition->id}}>{{$condition->name}}</option>
-                                                            }
-                                                        @else
-                                                            {
-                                                            <option value={{$condition->id}}>{{$condition->name}}</option>
-                                                            }
-                                                        @endif
-                                                    @endforeach
-                                                                                 
-                                                </select>
-                         
+                                            @foreach ($conditions as $condition)
+                                                @if($condition->order==1)
+                                                    {
+                                                    <option selected="selected"
+                                                            value={{$condition->id}}>{{$condition->name}}</option>
+                                                    }
+                                                @else
+                                                    {
+                                                    <option value={{$condition->id}}>{{$condition->name}}</option>
+                                                    }
+                                                @endif
+                                            @endforeach
+
+                                        </select>
+
                                     </div>
 
 
-                                    <div class="form-group">    
+                                    <div class="form-group">
 
-                                            <label for="area" class="control-label">Výmera</label>
-                                            <input class="form-control" type="number" name="area"><br>
+                                        <label for="area" class="control-label">Výmera</label>
+                                        <input class="form-control" type="number" name="area"><br>
 
-                                    </div>        
+                                    </div>
 
-                                <div class="form-group bottom40">
-                                            <label for="equiped" class="control-label">Zariadenie bytu</label>
-                                                <select name="equiped" class="form-control">
+                                    <div class="form-group bottom40">
+                                        <label for="equiped" class="control-label">Zariadenie bytu</label>
+                                        <select name="equiped" class="form-control">
 
-                                                    @foreach ($equipments as $equipment)
-                                                        @if($equipment->order==1)
-                                                            {
-                                                            <option selected="selected" value={{$equipment->id}}>{{$equipment->name}}</option>
-                                                            }
-                                                        @else
-                                                            {
-                                                            <option value={{$equipment->id}}>{{$equipment->name}}</option>
-                                                            }
-                                                        @endif
-                                                    @endforeach
-                                                
-                                                </select>
-                                </div>
+                                            @foreach ($equipments as $equipment)
+                                                @if($equipment->order==1)
+                                                    {
+                                                    <option selected="selected"
+                                                            value={{$equipment->id}}>{{$equipment->name}}</option>
+                                                    }
+                                                @else
+                                                    {
+                                                    <option value={{$equipment->id}}>{{$equipment->name}}</option>
+                                                    }
+                                                @endif
+                                            @endforeach
+
+                                        </select>
+                                    </div>
 
 
-                                 <div class="form-group">
+                                    <div class="form-group">
 
-                                            <button type="submit" class="btn btn-success btn-lg btn-block">Pridať inzerát</button>
-                         
-                                </div>
+                                        <button type="submit" class="btn btn-success btn-lg btn-block">Pridať inzerát
+                                        </button>
+
+                                    </div>
 
                             </div>
-                    </div> 
+                        </div>
 
 
+                        </form> </div>
+                </div><!-- END col-sm-1O col-md-8 -->
 
-                    </form> </div>
-    </div><!-- END col-sm-1O col-md-8 -->
+            </div>
 
-    </div>
-
-</div>    
-</div>
-
-
-<!--
-<div class="row">
-      
-      <div class="col-sm-1 col-md-2"></div>
+        </div>
+        </div>
 
 
-      <div class="col-sm-10 col-md-8">
-      <h2 class="text-uppercase bottom40">Pridať nový inzerát</h2>
+        <!--
+        <div class="row">
+
+              <div class="col-sm-1 col-md-2"></div>
 
 
-                  <form class="callus clearfix border_radius submit_property">
-                            <div class="row">
+              <div class="col-sm-10 col-md-8">
+              <h2 class="text-uppercase bottom40">Pridať nový inzerát</h2>
 
-                                <div class="col-sm-6">
-                                  
-                                    <div class="single-query form-group bottom20">
 
-                                            <label class="radio-inline">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ponúkam prenájom
-                                           </label>
+                          <form class="callus clearfix border_radius submit_property">
+                                    <div class="row">
+
+                                        <div class="col-sm-6">
+
+                                            <div class="single-query form-group bottom20">
+
+                                                    <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ponúkam prenájom
+                                                   </label>
+
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+
+                                            <div class="single-query form-group bottom20">
+
+                                                    <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ponúkam spolubývanie
+                                                   </label>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6">
+
+                                            <div class="single-query form-group bottom20">
+                                                    <label>Title</label>
+                                                    <input type="text" class="keyword-input" placeholder="Enter your property title">
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+
+                                            <div class="single-query form-group bottom20">
+                                                    <label>Title</label>
+                                                    <input type="text" class="keyword-input" placeholder="Enter your property title">
+                                            </div>
+
+                                        </div>
+
+
 
                                     </div>
+                          </form>
+        </div>
 
-                                </div>
-
-
-                                <div class="col-sm-6">
-                                  
-                                    <div class="single-query form-group bottom20">
-
-                                            <label class="radio-inline">
-                                            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Ponúkam spolubývanie
-                                           </label>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="col-sm-6">
-                                  
-                                    <div class="single-query form-group bottom20">
-                                            <label>Title</label>
-                                            <input type="text" class="keyword-input" placeholder="Enter your property title">
-                                    </div>
-
-                                </div>
+        -->
 
 
-                                <div class="col-sm-6">
-                                  
-                                    <div class="single-query form-group bottom20">
-                                            <label>Title</label>
-                                            <input type="text" class="keyword-input" placeholder="Enter your property title">
-                                    </div>
-
-                                </div>
-
-
-                                
-                            </div>
-                  </form>
-</div>
-
--->
-
-
-
-  </div>
-</section>
-  <!-- Listing Filer End -->
-  
+        </div>
+    </section>
+    <!-- Listing Filer End -->
 
 
 @endsection
+
+
